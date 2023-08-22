@@ -12,7 +12,7 @@ function Property() {
 
   useEffect(() => {
     fetchPropertyById(id);
-  }, [id]);
+  }, []);
 
   async function fetchPropertyById(id) {
     try {
