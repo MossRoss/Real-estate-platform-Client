@@ -27,7 +27,7 @@ function EditProperty() {
       }
     };
     fetchProperty();
-  }, []);
+  }, [id, navigate]);
 
   const handleTextChange = (e) => {
     setProperty({
