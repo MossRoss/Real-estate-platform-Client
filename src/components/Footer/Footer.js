@@ -11,14 +11,17 @@ function Footer() {
       flexDirection="column"
       color="White"
     >
-      <Box display="flex" gap="1" alignItems="center">
-        <HiHomeModern size="20" />
+      <Box display="flex" gap="1" alignContent={"center"}>
+        <HiHomeModern />
         <Text fontSize="lg" fontWeight="black">
           Moss Real estate
         </Text>
       </Box>
-      <Text marginTop="1rem fontSize='xs" textAlign="center"></Text>
-      All rights reserved - copyright Moss 2023
+      <Box>
+        <Text marginTop="1rem fontSize='xs" textAlign="center">
+          All rights reserved - copyright Moss 2023
+        </Text>
+      </Box>
     </Box>
   );
 }

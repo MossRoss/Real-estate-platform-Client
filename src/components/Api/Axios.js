@@ -4,7 +4,7 @@ const AxiosInstance = axios.create({
   baseURL:
     process.env.NODE_ENV === "development"
       ? "http://localhost:3001"
-      : "DEPLOYED URL",
+      : "https://real-estate-platform.onrender.com/",
   timeout: 50000,
 });
 

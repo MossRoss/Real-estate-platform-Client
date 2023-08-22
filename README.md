@@ -1,70 +1,70 @@
-# Getting Started with Create React App
+# Real Estate App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a full-stack real estate application built using the PERN stack (PostgreSQL, Express.js, React, Node.js). The app allows users to browse properties for sale and rent, add new properties, update existing properties, and delete properties.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+Browse properties for sale and rent.
+Add new properties with details such as title, description, price, and location.
+Update property details, including title, description, price, and location.
+Delete properties from the list.
 
-### `npm start`
+## Technologies Used
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Frontend:**
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+  - React: JavaScript library for building user interfaces.
+  - Bootstrap: CSS framework for styling and responsiveness.
+  - Axios: Promise-based HTTP client for making API requests.
 
-### `npm test`
+- **Backend:**
+  - Express.js: Web application framework for Node.js.
+  - PostgreSQL: Relational database management system.
+  - Node.js: JavaScript runtime environment.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Setup and Installation
 
-### `npm run build`
+1. **Clone the repository:**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+`[git clone](https://github.com/MossRoss/Real-estate-platform-Client)`
+`cd Real-estate-platform-Client`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. **Install dependencies:**
+   For both frontend and backend:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+`npm install`
 
-### `npm run eject`
+3. **Set up the database:**
+   Create a PostgreSQL database.
+   Configure your database connection in server.js.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+4. **Run the app:**
+   Start the backend server:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+`cd server`
+`npm run dev`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Start the frontend development server:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+`cd client`
+`npm run start`
 
-## Learn More
+The app will be accessible at http://localhost:3000 locally.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Usage
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Browse through the list of properties on the homepage.
+- Click on a property to view its details.
+- Use the "Add Property" button to add a new property with details.
+- Click on the "Edit" button to update property details.
+- Click on the "Delete" button to remove a property.
 
-### Code Splitting
+## Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+The frontend of this app is deployed on Netlify, and the backend is deployed on Render.
 
-### Analyzing the Bundle Size
+- **Frontend:** The React frontend is deployed on Netlify and can be accessed at [https://your-netlify-app-url.netlify.app](https://-netlify-app-url.netlify.app).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- **Backend:** The Express.js backend is deployed on Render and can be accessed at [https://your-render-app-url.onrender.com](https://-render-app-url.onrender.com).
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Both deployments are set up for automatic updates upon changes in the respective GitHub repositories.

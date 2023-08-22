@@ -21,14 +21,16 @@ function Nav() {
               </Text>
             </Box>
           </Link>
-          <Button
-            padding="1.5rem"
-            colorScheme="twitter"
-            fontSize="0.8rem"
-            fontWeight="medium"
-          >
-            ADD PROPERTY
-          </Button>
+          <Link to="/create-property">
+            <Button
+              padding="1.5rem"
+              colorScheme="twitter"
+              fontSize="0.8rem"
+              fontWeight="medium"
+            >
+              ADD PROPERTY
+            </Button>
+          </Link>
         </Flex>
       </Box>
     </Box>
