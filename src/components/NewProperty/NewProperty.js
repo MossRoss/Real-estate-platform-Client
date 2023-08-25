@@ -30,7 +30,7 @@ function NewProperty() {
         image_url: "",
       });
 
-      navigate(`/properties/${property.id}`);
+      navigate(`/properties`);
     } catch (e) {
       console.log(e);
     }
