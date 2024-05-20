@@ -6,14 +6,17 @@ import { getAllPropertiesApi } from "../Api/API";
 
 function Properties() {
   const [propertyData, setPropertyData] = useState([]);
+  const [error, setError] = useState("");
 
   async function fetchPropertiesData() {
     try {
-      let result = await getAllPropertiesApi();
+      let data = await getAllPropertiesApi();
 
-      setPropertyData(result.data);
+      setPropertyData(data);
+      setError("");
     } catch (e) {
       console.log(e.response);
+      setError(e.message);
     }
   }
   useEffect(() => {

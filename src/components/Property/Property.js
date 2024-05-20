@@ -16,8 +16,8 @@ function Property() {
 
   async function fetchPropertyById(id) {
     try {
-      let result = await getPropertyByIdApi(id);
-      setProperty(result.data[0]);
+      let data = await getPropertyByIdApi(id);
+      setProperty(data[0]);
     } catch (err) {
       return err;
     }
