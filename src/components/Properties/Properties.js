@@ -7,16 +7,19 @@ import { getAllPropertiesApi } from "../Api/API";
 function Properties() {
   const [propertyData, setPropertyData] = useState([]);
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
 
   async function fetchPropertiesData() {
     try {
-      let data = await getAllPropertiesApi();
-
-      setPropertyData(data);
       setError("");
+      setLoading(true);
+      let data = await getAllPropertiesApi();
+      setPropertyData(data);
     } catch (e) {
       console.log(e.response);
       setError(e.message);
+    } finally {
+      setLoading(false);
     }
   }
   useEffect(() => {
@@ -100,10 +103,16 @@ function Properties() {
   }
   return (
     <Box>
-      {propertyData.length === 0 ? (
-        <Text>Please go and create a Property</Text>
-      ) : (
-        showData()
+      {loading && <div>Loading...</div>}
+      {error && <div>Error: {error}</div>}
+      {!loading && !error && (
+        <>
+          {propertyData.length === 0 ? (
+            <Text>Please go and create a Property</Text>
+          ) : (
+            showData()
+          )}
+        </>
       )}
     </Box>
   );

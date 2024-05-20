@@ -20,8 +20,8 @@ function EditProperty() {
   useEffect(() => {
     const fetchProperty = async () => {
       try {
-        const response = await getPropertyByIdApi(id);
-        setProperty(response.data[0]);
+        const data = await getPropertyByIdApi(id);
+        setProperty(data.data[0]);
       } catch (error) {
         navigate("/404");
       }
