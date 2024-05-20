@@ -30,7 +30,7 @@ function Property() {
       alert(`Property ${title} has been deleted`);
       navigate("/properties");
     } catch (error) {
-      console.log(error);
+      console.log(error.message);
     }
   };
 
