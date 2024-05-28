@@ -15,7 +15,7 @@ async function getAllPropertiesApi() {
       return data;
     }
   } catch (err) {
-    console.error(err.message);
+    // console.error(err.message);
     throw err;
   }
 }
@@ -32,7 +32,8 @@ async function getPropertyByIdApi(id) {
       return data;
     }
   } catch (err) {
-    console.error(err.message);
+    //console.error(err.message);
+    throw err;
   }
 }
 async function updatePropertyByIdApi(id, updatedProperty) {
@@ -54,7 +55,8 @@ async function updatePropertyByIdApi(id, updatedProperty) {
     const result = await response.json();
     return result;
   } catch (err) {
-    console.error(err.message);
+    //console.error(err.message);
+    throw err;
   }
 }
 async function deletePropertyApi(id) {
@@ -71,7 +73,8 @@ async function deletePropertyApi(id) {
     const result = await response.json();
     return result;
   } catch (err) {
-    console.error(err.message);
+    //console.error(err.message);
+    throw err;
   }
 }
 
@@ -95,7 +98,8 @@ async function createPropertyApi(property) {
     console.log(result);
     return result;
   } catch (err) {
-    console.error(err.message);
+    // console.error(err.message);
+    throw err;
   }
 }
 
