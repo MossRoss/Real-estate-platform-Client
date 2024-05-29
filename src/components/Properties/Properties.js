@@ -16,7 +16,6 @@ function Properties() {
   const handleSortKeyChange = (e) => {
     setSortKey(e.target.value);
   };
-  // console.log(sortKey);
 
   const propertiesToDisplay = propertyData
     .filter((property) => {
