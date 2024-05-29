@@ -6,6 +6,50 @@ import { getAllPropertiesApi } from "../Api/API";
 
 function Properties() {
   const [propertyData, setPropertyData] = useState([]);
+  const [searchInput, setSearchInput] = useState("");
+  const [sortKey, setSortKey] = useState("id");
+
+  const handleChange = (e) => {
+    setSearchInput(e.target.value);
+  };
+
+  const handleSortKeyChange = (e) => {
+    setSortKey(e.target.value);
+  };
+  // console.log(sortKey);
+
+  const propertiesToDisplay = propertyData
+    .filter((property) => {
+      const { title } = property;
+      return `${title}`.toLowerCase().includes(searchInput.toLowerCase());
+    })
+    .sort((a, b) => {
+      if (sortKey === "title") {
+        const titleA = a.title.toLowerCase;
+        const titleB = b.title.toLowerCase;
+        if (titleA < titleB) {
+          return -1;
+        } else if (a > b) {
+          return 1;
+        } else {
+          return 0;
+        }
+      } else if (sortKey === "price") {
+        return a.price - b.price;
+      } else if (sortKey === "purpose") {
+        const purposeA = a.purpose.toLowerCase;
+        const purposeB = b.purpose.toLowerCase;
+        if (purposeA < purposeB) {
+          return -1;
+        } else if (a > b) {
+          return 1;
+        } else {
+          return 0;
+        }
+      } else {
+        return a.id - b.id; //default sorted by ID
+      }
+    });
 
   async function fetchPropertiesData() {
     try {
@@ -21,10 +65,29 @@ function Properties() {
   }, []);
 
   function showData() {
+    if (!propertiesToDisplay.length) {
+      return <div>No result found for {searchInput}</div>;
+    }
     return (
       <Box>
+        <div>
+          <input
+            type="text"
+            value={searchInput}
+            onChange={handleChange}
+            placeholder="Search by property type"
+          />
+          <label>Sort by:</label>
+          <select value={sortKey} onChange={handleSortKeyChange}>
+            <option value="id">default</option>
+            <option value="title">title</option>
+            <option value="price">price</option>
+            <option value="purpose">purpose</option>
+          </select>
+        </div>
+
         <Box>
-          {propertyData.map(
+          {propertiesToDisplay.map(
             ({
               id,
               title,
