@@ -25,30 +25,14 @@ function Properties() {
       return `${title}`.toLowerCase().includes(searchInput.toLowerCase());
     })
     .sort((a, b) => {
-      if (sortKey === "title") {
-        const titleA = a.title.toLowerCase;
-        const titleB = b.title.toLowerCase;
-        if (titleA < titleB) {
+      if (sortKey !== "price") {
+        if (a[sortKey] < b[sortKey]) {
           return -1;
-        } else if (a > b) {
+        } else if (a[sortKey] > b[sortKey]) {
           return 1;
-        } else {
-          return 0;
-        }
-      } else if (sortKey === "price") {
-        return a.price - b.price;
-      } else if (sortKey === "purpose") {
-        const purposeA = a.purpose.toLowerCase;
-        const purposeB = b.purpose.toLowerCase;
-        if (purposeA < purposeB) {
-          return -1;
-        } else if (a > b) {
-          return 1;
-        } else {
-          return 0;
-        }
+        } else return 0;
       } else {
-        return a.id - b.id; //default sorted by ID
+        return a[sortKey] - b[sortKey];
       }
     });
 
